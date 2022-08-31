@@ -1,0 +1,564 @@
+{
+  "contractName": "PeripheryValidation",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/base/PeripheryValidation.sol\":\"PeripheryValidation\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/base/BlockTimestamp.sol\":{\"keccak256\":\"0x1aa66f71234064a0c0976f62233f2edbd69554e5ad817dc97f318bc8e11f4da6\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://b3a40450e9d6b0f9cb91b40ffd6215612505bd74e7d954529958f4edc6ee7b93\",\"dweb:/ipfs/QmewsUCHK5N5KhNtqEwK8JgsXFADyFBrQRS5HoDWM5gi3b\"]},\"project:/contracts/base/PeripheryValidation.sol\":{\"keccak256\":\"0xc736bab599912d6212e8414ee4ba7af0c1e08ff6aa11caa85f5f6e07f7d421c3\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://06f6c13a86900c71fa486fc029a59d1b7eb96162bb42885b5f845d995294893e\",\"dweb:/ipfs/QmUcBxMsmncw9n6eXhzzwSasGBvBGKH5FT8HSrAxrsXV4A\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: GPL-2.0-or-later\npragma solidity =0.7.6;\n\nimport './BlockTimestamp.sol';\n\nabstract contract PeripheryValidation is BlockTimestamp {\n    modifier checkDeadline(uint256 deadline) {\n        require(_blockTimestamp() <= deadline, 'Transaction too old');\n        _;\n    }\n}\n",
+  "sourcePath": "C:\\Users\\fork-uniswap\\periphery\\contracts\\base\\PeripheryValidation.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/base/PeripheryValidation.sol",
+    "exportedSymbols": {
+      "BlockTimestamp": [
+        10737
+      ],
+      "PeripheryValidation": [
+        11689
+      ]
+    },
+    "id": 11690,
+    "license": "GPL-2.0-or-later",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11671,
+        "literals": [
+          "solidity",
+          "=",
+          "0.7",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "45:23:60"
+      },
+      {
+        "absolutePath": "project:/contracts/base/BlockTimestamp.sol",
+        "file": "./BlockTimestamp.sol",
+        "id": 11672,
+        "nodeType": "ImportDirective",
+        "scope": 11690,
+        "sourceUnit": 10738,
+        "src": "70:30:60",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 11673,
+              "name": "BlockTimestamp",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 10737,
+              "src": "143:14:60",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BlockTimestamp_$10737",
+                "typeString": "contract BlockTimestamp"
+              }
+            },
+            "id": 11674,
+            "nodeType": "InheritanceSpecifier",
+            "src": "143:14:60"
+          }
+        ],
+        "contractDependencies": [
+          10737
+        ],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 11689,
+        "linearizedBaseContracts": [
+          11689,
+          10737
+        ],
+        "name": "PeripheryValidation",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 11687,
+              "nodeType": "Block",
+              "src": "205:89:60",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 11682,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 11679,
+                            "name": "_blockTimestamp",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 10736,
+                            "src": "223:15:60",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
+                              "typeString": "function () view returns (uint256)"
+                            }
+                          },
+                          "id": 11680,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "223:17:60",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "<=",
+                        "rightExpression": {
+                          "id": 11681,
+                          "name": "deadline",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 11676,
+                          "src": "244:8:60",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "223:29:60",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "5472616e73616374696f6e20746f6f206f6c64",
+                        "id": 11683,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "254:21:60",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_c2621685b6a86291a4533558eb72fba04db12a0363db47624d86d9bbb608d293",
+                          "typeString": "literal_string \"Transaction too old\""
+                        },
+                        "value": "Transaction too old"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_c2621685b6a86291a4533558eb72fba04db12a0363db47624d86d9bbb608d293",
+                          "typeString": "literal_string \"Transaction too old\""
+                        }
+                      ],
+                      "id": 11678,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "215:7:60",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 11684,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "215:61:60",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 11685,
+                  "nodeType": "ExpressionStatement",
+                  "src": "215:61:60"
+                },
+                {
+                  "id": 11686,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "286:1:60"
+                }
+              ]
+            },
+            "id": 11688,
+            "name": "checkDeadline",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 11677,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11676,
+                  "mutability": "mutable",
+                  "name": "deadline",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11688,
+                  "src": "187:16:60",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11675,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "187:7:60",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "186:18:60"
+            },
+            "src": "164:130:60",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 11690,
+        "src": "102:194:60"
+      }
+    ],
+    "src": "45:252:60"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/base/PeripheryValidation.sol",
+      "exportedSymbols": {
+        "BlockTimestamp": [
+          10737
+        ],
+        "PeripheryValidation": [
+          11689
+        ]
+      },
+      "license": "GPL-2.0-or-later"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "=",
+            "0.7",
+            ".6"
+          ]
+        },
+        "id": 11671,
+        "name": "PragmaDirective",
+        "src": "45:23:60"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 10738,
+          "absolutePath": "project:/contracts/base/BlockTimestamp.sol",
+          "file": "./BlockTimestamp.sol",
+          "scope": 11690,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 11672,
+        "name": "ImportDirective",
+        "src": "70:30:60"
+      },
+      {
+        "attributes": {
+          "abstract": true,
+          "contractDependencies": [
+            10737
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            11689,
+            10737
+          ],
+          "name": "PeripheryValidation",
+          "scope": 11690
+        },
+        "children": [
+          {
+            "attributes": {},
+            "children": [
+              {
+                "attributes": {
+                  "name": "BlockTimestamp",
+                  "referencedDeclaration": 10737,
+                  "type": "contract BlockTimestamp"
+                },
+                "id": 11673,
+                "name": "UserDefinedTypeName",
+                "src": "143:14:60"
+              }
+            ],
+            "id": 11674,
+            "name": "InheritanceSpecifier",
+            "src": "143:14:60"
+          },
+          {
+            "attributes": {
+              "name": "checkDeadline",
+              "virtual": false,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "deadline",
+                      "scope": 11688,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 11675,
+                        "name": "ElementaryTypeName",
+                        "src": "187:7:60"
+                      }
+                    ],
+                    "id": 11676,
+                    "name": "VariableDeclaration",
+                    "src": "187:16:60"
+                  }
+                ],
+                "id": 11677,
+                "name": "ParameterList",
+                "src": "186:18:60"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                {
+                                  "typeIdentifier": "t_stringliteral_c2621685b6a86291a4533558eb72fba04db12a0363db47624d86d9bbb608d293",
+                                  "typeString": "literal_string \"Transaction too old\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                4294967278,
+                                4294967278
+                              ],
+                              "referencedDeclaration": 4294967278,
+                              "type": "function (bool,string memory) pure",
+                              "value": "require"
+                            },
+                            "id": 11678,
+                            "name": "Identifier",
+                            "src": "215:7:60"
+                          },
+                          {
+                            "attributes": {
+                              "commonType": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "<=",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "arguments": [
+                                    null
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "tryCall": false,
+                                  "type": "uint256",
+                                  "type_conversion": false
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        null
+                                      ],
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 10736,
+                                      "type": "function () view returns (uint256)",
+                                      "value": "_blockTimestamp"
+                                    },
+                                    "id": 11679,
+                                    "name": "Identifier",
+                                    "src": "223:15:60"
+                                  }
+                                ],
+                                "id": 11680,
+                                "name": "FunctionCall",
+                                "src": "223:17:60"
+                              },
+                              {
+                                "attributes": {
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 11676,
+                                  "type": "uint256",
+                                  "value": "deadline"
+                                },
+                                "id": 11681,
+                                "name": "Identifier",
+                                "src": "244:8:60"
+                              }
+                            ],
+                            "id": 11682,
+                            "name": "BinaryOperation",
+                            "src": "223:29:60"
+                          },
+                          {
+                            "attributes": {
+                              "hexvalue": "5472616e73616374696f6e20746f6f206f6c64",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "token": "string",
+                              "type": "literal_string \"Transaction too old\"",
+                              "value": "Transaction too old"
+                            },
+                            "id": 11683,
+                            "name": "Literal",
+                            "src": "254:21:60"
+                          }
+                        ],
+                        "id": 11684,
+                        "name": "FunctionCall",
+                        "src": "215:61:60"
+                      }
+                    ],
+                    "id": 11685,
+                    "name": "ExpressionStatement",
+                    "src": "215:61:60"
+                  },
+                  {
+                    "id": 11686,
+                    "name": "PlaceholderStatement",
+                    "src": "286:1:60"
+                  }
+                ],
+                "id": 11687,
+                "name": "Block",
+                "src": "205:89:60"
+              }
+            ],
+            "id": 11688,
+            "name": "ModifierDefinition",
+            "src": "164:130:60"
+          }
+        ],
+        "id": 11689,
+        "name": "ContractDefinition",
+        "src": "102:194:60"
+      }
+    ],
+    "id": 11690,
+    "name": "SourceUnit",
+    "src": "45:252:60"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2022-03-05T10:56:34.606Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
